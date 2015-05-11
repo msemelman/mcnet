@@ -1,3 +1,4 @@
 Wachinet
 *.log
 *.lock
+logs
