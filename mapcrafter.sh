@@ -1,5 +1,7 @@
 #!/bin/bash
 
 export LC_ALL="en_US.UTF-8"
-mapcrafter -c /home/ubuntu/minecraft-server/render.conf -j 2
-chmod 777 -R /var/www/
+echo $1
+mapcrafter -c $1 -j 2
+mv mapcraft /var/www/html
+sudo chmod 777 -R /var/www/

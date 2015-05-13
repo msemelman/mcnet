@@ -1,0 +1,12 @@
+#!/bin/bash
+
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd );
+cd $DIR;
+LOG=$DIR/server.log;
+
+command=$1
+echo "Running "$command;
+pre_log_len=$(wc -l $LOG | awk '{print $1}')
+screen -p 0 -S 'minecraft' -X stuff $command$"\n"
+sleep 0.1
+tail -n $[$(wc -l $LOG | awk '{print $1}')-$pre_log_len] $LOG
