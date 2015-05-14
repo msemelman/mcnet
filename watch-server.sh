@@ -14,6 +14,7 @@ if [ $JUGADORES = 0 ]; then
     echo 'strike' >> $HITS;
     echo $(wc -l $HITS | awk '{print $1}');
     if [ $(wc -l $HITS | awk '{print $1}') -gt 3 ]; then
+        rm $HITS
         echo 'OUUUUT';
         ./mccommand /stop;
         sleep 4;
