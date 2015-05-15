@@ -13,7 +13,7 @@ echo "Hay "$JUGADORES" jugadores"
 if [ $JUGADORES = 0 ]; then
     echo 'strike' >> $HITS;
     echo $(wc -l $HITS | awk '{print $1}');
-    if [ $(wc -l $HITS | awk '{print $1}') -gt 3 ]; then
+    if [ $(wc -l $HITS | awk '{print $1}') -gt 30 ]; then
         rm $HITS
         echo 'OUUUUT';
         ./mccommand /stop;
