@@ -16,6 +16,7 @@ if [ $JUGADORES = 0 ]; then
     if [ $(wc -l $HITS | awk '{print $1}') -gt 30 ]; then
         rm $HITS
         echo 'OUUUUT';
+        ./mccommand /say No hay nadie, apagando.
         ./mccommand /stop;
         sleep 4;
         ./mccommand exit;
