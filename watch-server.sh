@@ -19,6 +19,7 @@ if [ $JUGADORES = 0 ]; then
         ./mccommand /stop;
         sleep 4;
         ./mccommand exit;
+        aws ec2 stop-instances --instance-ids i-78ff6a9b
     fi
 else 
     echo 'Salvado por la campana';
